@@ -1,4 +1,4 @@
-import styles from './Searchear.module.scss';
+import styles from "./Searchear.module.scss";
 import {CgSearch} from "react-icons/cg";
 interface Props {
     search: string;

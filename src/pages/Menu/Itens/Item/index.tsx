@@ -1,22 +1,12 @@
-import styles from './Item.module.scss';
-import logo from 'assets/logo.svg';
+import styles from "./Item.module.scss";
 import classNames from "classnames";
-interface Props {
-    id: number;
-    title: string;
-    description: string;
-    photo: string;
-    size: number;
-    serving: number;
-    price: number;
-    category: {
-        id: number;
-        label: string;
-    }
-}
-export function Item(props: Props) {
+import { Dish } from "types/Dish";
+import { useNavigate } from "react-router-dom";
+
+export function Item(props: Dish) {
+    const navigate = useNavigate();
     return (
-        <div className={styles.item}>
+        <div className={styles.item} onClick={() => navigate(`/dish/${props.id}`)}>
             <div className={styles.item__imagem}>
                 <img src={props.photo} alt={props.title}/>
             </div>

@@ -1,0 +1,25 @@
+@import 'src/styles/variables';
+@import 'src/styles/breakpoits';
+
+.container {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .voltar {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    button {
+      background-color: transparent;
+      border: none;
+      color: $red;
+      cursor: pointer;
+      letter-spacing: 1px;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+  }

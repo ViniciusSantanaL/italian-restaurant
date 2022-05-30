@@ -1,7 +1,7 @@
-import filtersJson from './filters.json';
-import styles from './Filters.module.scss';
+import filtersJson from "./filters.json";
+import styles from "./Filters.module.scss";
 import React from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 interface Option {
     id: number;

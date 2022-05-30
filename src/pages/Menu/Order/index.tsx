@@ -1,7 +1,7 @@
-import styles from './Order.module.scss';
-import optionsJson from './options.json';
+import styles from "./Order.module.scss";
+import optionsJson from "./options.json";
 import classNames from "classnames";
-import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
+import {MdKeyboardArrowDown, MdKeyboardArrowUp} from "react-icons/md";
 import React, {useState} from "react";
 
 interface Props {

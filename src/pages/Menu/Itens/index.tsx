@@ -1,7 +1,8 @@
-import styles from './Itens.module.scss';
-import menuJson from './itens.json';
+import styles from "./Itens.module.scss";
+import menuJson from "../../../data/menu.json";
 import {Item} from "./Item";
 import {useEffect, useState} from "react";
+import { Dish } from "types/Dish";
 
 
 interface Props {
@@ -13,7 +14,7 @@ export function Itens(props: Props) {
     const [list, setList] = useState(menuJson);
 
     function searchTest(title: string) {
-        const regex = new RegExp(props.search,'i');
+        const regex = new RegExp(props.search,"i");
         return regex.test(title);
     }
     function filterTest(id: number) {
@@ -21,13 +22,13 @@ export function Itens(props: Props) {
             return props.filter === id;
         return true;
     }
-    function order(newList: typeof menuJson) {
+    function order(newList: Array<Dish>) {
         switch (props.order) {
-            case 'portion':
+            case "portion":
                 return newList.sort((a,b) => a.size > b.size ? 1: -1);
-            case 'count_people':
+            case "count_people":
                 return newList.sort((a,b) => a.serving > b.serving ? 1 : -1);
-            case 'price':
+            case "price":
                 return newList.sort((a,b) => a.price > b.price ? 1 : -1);
             default:
                 return newList;
@@ -38,7 +39,7 @@ export function Itens(props: Props) {
         const newList = menuJson.filter(item => searchTest(item.title) &&
             filterTest(item.category.id));
         setList(order(newList));
-    },[props.search, props.filter, props.order])
+    },[props.search, props.filter, props.order]);
     return (
       <div className={styles.itens}>
           {list.map(item => (

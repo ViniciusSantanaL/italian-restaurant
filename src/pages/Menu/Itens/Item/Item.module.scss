@@ -7,9 +7,16 @@ $combos: #e6c864;
 $vegans: #80aa40;
 
 .item {
+  align-items: center;
   display: flex;
+  cursor: pointer;
+  padding: 20px;
   flex-wrap: wrap;
+  transition: .2s ease-in;
   width: 90%;
+  &:hover {
+    background-color: $grey;
+  }
   &__imagem {
     min-width: 240px;
     @media (max-width: $desktop_xsm) {
